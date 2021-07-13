@@ -3,7 +3,7 @@ const express = require('express')
 const hbs=require('hbs')
 const geocall = require('./utils/geocall.js')
 const weathercall = require('./utils/weathercall.js')
-
+const port = process.env.PORT || 3000
 //define paths for express config
 const app = express()  // call once to generate express application
 const viewpath = path.join(__dirname,'../templates/views')
@@ -91,7 +91,7 @@ app.get('*',(req,res)=>
     })
 })
 
-app.listen(3000,() =>
+app.listen(port,() =>
 {
-console.log("server is running on port 3000")
+console.log("server is running on port "+port)
 })  // to start the server , 3000 is port for developers , callback func runs when server is running
