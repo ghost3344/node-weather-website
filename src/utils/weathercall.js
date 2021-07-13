@@ -25,10 +25,13 @@ const options = {
       
       else
       {
+        console.log(body)
         
           temperature = body.currently.temperature
           precip = body.currently.precipProbability 
-        forecastdata = 'It is currently '+ temperature +' Degrees out. There is a '+precip+'% chance of rain'
+          summary = body.daily.summary
+          humidity = body.currently.humidity
+        forecastdata = 'It is mostly '+summary+'. It is currently '+ temperature +' Degrees out. There is a '+precip+'% chance of rain . Humidity is '+humidity+'.'
         callback(undefined,forecastdata)
       }
   })
